@@ -33,8 +33,8 @@ KEYS  = ['eps', 'Pgm', 'Pgg', 'Thm', 'Thg', 'sg_burn', 'sm_burn', 'sig124', 'phi
 FIXED = {'N124_0'}
 
 NOM = {
-    'eps':     1.0,        # efficiency ratio (metastable gamma / ground gamma)
-    'Pgm':     0.602,      # gamma intensity at 111.3 keV (xe-125m)
+    'eps':     1.079980584,        # efficiency ratio (metastable gamma / ground gamma)
+    'Pgm':     0.199,      # gamma intensity at 141.4 keV (xe-125m)
     'Pgg':     0.538,      # gamma intensity at 188.4 keV (xe-125g)
     'Thm':     56.9,       # half life of xe-125m [s]
     'Thg':     60732.0,    # half life of xe-125g [s] (16.87 h)
@@ -46,8 +46,8 @@ NOM = {
 }
 
 REL = {
-    'eps':     0.05,
-    'Pgm':     0.01,
+    'eps':     0.0174267911,
+    'Pgm':     0.0242,
     'Pgg':     0.01,
     'Thm':     0.9   / 56.9,
     'Thg':     288.0 / 60732.0,
@@ -174,7 +174,7 @@ print(mfit)
 # pull table
 LABELS = {
     'eps':     'efficiency ratio',
-    'Pgm':     'Pg(111.3 keV, Xe-125m)',
+    'Pgm':     'Pg(141.4 keV, Xe-125m)',
     'Pgg':     'Pg(188.4 keV, Xe-125g)',
     'Thm':     'T1/2(Xe-125m) [s]',
     'Thg':     'T1/2(Xe-125g) [s]',
