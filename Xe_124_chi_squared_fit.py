@@ -144,7 +144,9 @@ s_m  = r_m * u_arr[mask]
 print(f'data points: {len(t_m)}')
 
 # chi squared
-def chi2(IYR, **x_vals):
+def chi2(*args):
+    IYR = args[0]
+    x_vals = {f'x_{k}': val for k, val in zip(KEYS, args[1:])}
     p = {k: x_vals[f'x_{k}'] * NOM[k] for k in KEYS}
     prediction = model(t_m, IYR,
                        p['eps'], p['Pgm'], p['Pgg'], p['Thm'], p['Thg'],
@@ -156,6 +158,9 @@ def chi2(IYR, **x_vals):
 
 # fit
 IYR_INIT = 0.05
+
+chi2._parameters = {name: None for name in ['IYR'] + [f'x_{k}' for k in KEYS]}
+
 mfit = Minuit(chi2, IYR=IYR_INIT, **{f'x_{k}': 1.0 for k in KEYS})
 mfit.errordef = Minuit.LEAST_SQUARES
 
