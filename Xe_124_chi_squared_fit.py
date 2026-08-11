@@ -276,7 +276,7 @@ ax.fill_between(t_fine, pred(t_fine, IYR_lo), pred(t_fine, IYR_hi),
 ax.plot(t_fine, pred(t_fine, IYR_fit), color=C_FIT, lw=1.3, zorder=4,
         label='best fit, IYR = %.5f $\\pm$ %.5f' % (IYR_fit, 0.5*(err_lo+err_hi)))
 ax.set_yscale('log')
-ax.set_ylabel(r'$A_{111}/A_{188}$')
+ax.set_ylabel(r'$A_{141}/A_{188}$')
 ax.legend(fontsize=7.5, loc='upper right', handlelength=1.8)
 ax.tick_params(labelbottom=False)
 
